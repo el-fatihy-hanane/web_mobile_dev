@@ -6,28 +6,42 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
-        <a href="#" class="logo">Hanane El Fatihy</a>
+        <a href="#" class="logo">Hanane <span>El Fatihy</span></a>
         <ul>
-            <li class="active"><a href="#home">Accueil</a></li>
-            <li><a href="#education">Éducation</a></li>
-            <li><a href="#projects">Projets</a></li>
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Project</a></li>
             <li><a href="#certifications">Certification</a></li>
-            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    
- 
+    <div class="bars-animation">
+        <div class="bar" style="--i:6;"></div>
+        <div class="bar" style="--i:5;"></div>
+        <div class="bar" style="--i:4;"></div>
+        <div class="bar" style="--i:3;"></div>
+        <div class="bar" style="--i:2;"></div>
+        <div class="bar" style="--i:1;"></div>
+    </div>
     <section class="home" id="home">
         <div class="home-info">
-            <h1 class="animate-text">Bonjour, je suis Hanane El Fatihy</h1>
-            <p class="animate-text">Je suis Étudiante en Informatique et Ingénierie des Données, Passionnée par l'analyse de données, l'informatique et la programmation, je cherche à approfondir mes connaissances en science des données pour mieux comprendre et exploiter le potentiel des informations, en développant des solutions innovantes grâce aux technologies numériques.</p>
-            
-            <div class="btn-sci animate-btn">
-                <a target="_blank" href="cv.pdf" class="btn">Jetez un œil à mon CV</a>
+            <h1>Hi ,I'm Hanane </h1>
+            <h2>I'm a
+                <span style="--i:4;" data-text="Student ">Student  </span>
+                <span style="--i:3;" data-text="Software Engineering">Software Engineering </span> 
+                <span style="--i:2;" data-text="Data Engineer">Data Engineer</span>
+                <span style="--i:1;" data-text="Cloud Computing">Cloud Computing </span>
+            </h2>
+
+            <p>Passionate about data science, computer science, and programming, I am committed to continuously deepening my knowledge and expertise in these fields. With a strong foundation in coding and data analysis, I aim to explore advanced techniques in data science to better understand complex datasets, uncover valuable insights, and harness the potential of information. My goal is to develop innovative, data-driven solutions that not only address current challenges but also anticipate future opportunities. I am eager to contribute to projects that leverage digital technologies, enhance decision-making processes, and drive positive change across industries.</p>       
+            <div class="btn-sci">
+                
+                <a href="cv.pdf" class="btn">Download CV</a>
                 <div class="sci">
                     <a target="_blank" href="https://github.com/el-fatihy-hanane"><i class='bx bxl-github'></i></a>
                     <a target="_blank" href="https://www.linkedin.com/in/hanane-el-fatihy-701ab1273"><i class='bx bxl-linkedin'></i></a>
@@ -35,148 +49,195 @@
                 </div>
             </div>
         </div>
-        
         <div class="home-img">
             <div class="img-box">
                 <div class="img-item">
-                    <img src="my.jpg" alt="Image à l'intérieur du cercle">
+                    <img src="my.jpg" alt="">
                 </div>
             </div>
         </div>
+    </section>
+        <section id="education">
+
+            <h2>education</h2>
+            <div class="education">
+                <div class="education-card small">
+                    <div class="year">2022</div>
+                    <div class="card-content">
+                        <h2>Ben Yassine High School of Khouribga</h2>
+                        <h3>Bachelor's Degree in Physical Sciences</h3>
+                        <p>Obtaining a Bachelor's degree in Physical Sciences with honors, reinforcing a solid foundation in physics and mathematics.</p>
+                    </div>
+                </div>
         
-    </section>
-<section id="education">
+                <div class="education-card medium">
+                    <div class="year">2022 - 2024</div>
+                    <div class="card-content">
+                        <h2>National School of Applied Sciences of Khouribga</h2>
+                        <h3>Preparatory Cycle</h3>
+                        <p>Intensive training focused on advanced mathematics, algorithms, and fundamental concepts of computer science and engineering.</p>
+                    </div>
+                </div>
+        
+                <div class="education-card large">
+                    <div class="year">2024 - Present</div>
+                    <div class="card-content">
+                        <h2>National School of Applied Sciences of Khouribga</h2>
+                        <h3>Master's Degree in Computer Science and Data Engineering</h3>
+                        <p>Program focused on data analysis, application development, and solving complex problems using digital technologies.</p>
+                    </div>
+                </div>
+            </div>
+            </section>
+            <section id="projects">
+                <div class="container">
+                    <h2>Projets</h2>
+                    <div class="project-card">
+                        <h3>Flight ticket booking project</h3>
+                        <p>Develop a flight ticket reservation system in C language, allowing users to book and manage their tickets.</p>
+                        <p><strong>Technologies :</strong> C</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Image Processing Project</h3>
+                        <p>Digital Image Processing in Python, including black and white, grayscale, and RGB conversions.</p>
+                        <p><strong>Technologies :</strong> Python</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Clinic Management</h3>
+                        <p>Design and development of a website to manage patients, doctors, appointments, medical records, etc.</p>
+                        <p><strong>Technologies :</strong> HTML, CSS, JS, PHP, MySQL</p>
+                    </div>
+                </div>
+            </section>
+            <section id="certifications">
+                <div class="container">
+                    <h2>Certifications</h2>
+                    <div class="experience-card">
+                        <h3>Python for Data Science, AI & Development</h3>
+                        <p><strong>Fournisseur :</strong> IBM via Coursera</p>
+                    </div>
+                    <div class="experience-card">
+                        <h3>Leadership Skills</h3>
+                        <p><strong>Fournisseur :</strong> IBM via Coursera</p>
+                    </div>
+                    <div class="experience-card">
+                        <h3>SQL for Data Science with R</h3>
+                        <p><strong>Fournisseur :</strong> IBM via Coursera</p>
+                    </div>
+                    <div class="experience-card">
+                        <h3>Introduction to Databases</h3>
+                        <p><strong>Fournisseur :</strong> IBM via Coursera</p>
+                    </div>
+                    <div class="experience-card">
+                        <h3>Database Structures and Management with MySQL</h3>
+                        <p><strong>Fournisseur :</strong> IBM via Coursera</p>
+                    </div>
+                    <div class="experience-card">
+                        <h3>Active Member Certificate</h3>
+                        <p><strong>Event :</strong> Open Source Days</p>
+                    </div>
+                    <div class="experience-card">
+                        <h3>Active Member Certificate</h3>
+                        <p><strong>Event :</strong> DATAVERS</p>
+                    </div>
+                </div>
+            </section>
+            <section id="skills">
+                <div class="container">
+                    <h2>Skills</h2>
+                    
+                    <!-- Langages et Développement -->
+                    <div class="skills-group">
+                        <p class="skills-title">Languages & Development</p>
+                        <div class="languages-box">
+                            <figure><i class="fab fa-python fa-3x"></i><figcaption>Python</figcaption></figure>
+                            <figure><i class="fas fa-code fa-3x"></i><figcaption>C</figcaption></figure>
+                            <figure><i class="fas fa-database fa-3x"></i><figcaption>SQL</figcaption></figure>
+                            <figure><i class="fab fa-html5 fa-3x"></i><figcaption>HTML</figcaption></figure>
+                            <figure><i class="fab fa-css3-alt fa-3x"></i><figcaption>CSS</figcaption></figure>
+                            <figure><i class="fab fa-php fa-3x"></i><figcaption>PHP</figcaption></figure>
+                            <figure><i class="fab fa-js fa-3x"></i><figcaption>JavaScript</figcaption></figure>
+                            <figure><i class="fas fa-database fa-3x"></i><figcaption>R</figcaption></figure>
+                        </div>
+                    </div>
+                    
+                    <!-- Outils et Logiciels -->
+                    <div class="skills-group">
+                        <p class="skills-title">Tools & Software</p>
+                        <div class="tools">
+                            <figure><i class="fab fa-git fa-3x"></i><figcaption>Git</figcaption></figure>
+                            <figure><i class="fas fa-cogs fa-3x"></i><figcaption>Catia</figcaption></figure>
+                            <figure><i class="fas fa-file-excel fa-3x"></i><figcaption>Excel</figcaption></figure>
+                            <figure><i class="fab fa-microsoft fa-3x"></i><figcaption>PowerPoint</figcaption></figure>
 
-    <h2>education</h2>
-    <div class="education">
-        <div class="education-card small">
-            <div class="year">2022</div>
-            <div class="card-content">
-                <h2>Lycée Ben Yassine de Khouribga</h2>
-                <h3>Baccalauréat en Sciences Physiques</h3>
-                <p>Obtention d'un baccalauréat en Sciences Physiques avec mention Très Bien, consolidant une base solide en physique et en mathématiques.</p>
-            </div>
-        </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bibliothèques et Technologies -->
+                    <div class="skills-group">
+                        <p class="skills-title">Libraries & Technologies</p>
+                        <div class="libraries">
+                            <figure><i class="fab fa-python fa-3x"></i><figcaption>NumPy</figcaption></figure>
+                            <figure><i class="fab fa-python fa-3x"></i><figcaption>Pandas</figcaption></figure>
+                            <figure><i class="fab fa-python fa-3x"></i><figcaption>Matplotlib</figcaption></figure>
+                        </div>
+                    </div>
+                    
+                    <!-- Qualités professionnelles -->
+                    <div class="skills-group">
+                        <p class="skills-title">Professional Qualities</p>
+                        <ul>
+                            <p>Project Management</p>
+                            <p>Public Relations</p>
+                            <p>Relationship Management</p>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="contact" id="contact">
+                <h2 class="heading">Contact Me </h2>
+                <from action="">
+                    <div class="input-group">
+                        <div class="input-box">
+                            <input type="text" placeholder="Full Name">
+                            <input type="email" placeholder="Email">
+                        </div>
+                        <div class="input-box">
+                            <input type="text" placeholder="Phone Number">
+                            <input type="text" placeholder="Subject">
+                        </div>
+                    </div>
+                    <div class="input-group-2">
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message">
+                        </textarea>
+                        <input type="submit" value="Send Message" class="btn">
+                    </div>
+                </from>
+                <footer class="footer">
+                    <div class="social">
+                        <a target="_blank" href="https://github.com/el-fatihy-hanane"><i class='bx bxl-github'></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/hanane-el-fatihy-701ab1273"><i class='bx bxl-linkedin'></i></a>
+                        <a target="_blank" href="https://www.instagram.com/han__ne__ell/"><i class='bx bxl-instagram'></i></a>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <a href="#">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                        </li>
+                        <li>
+                            <a href="#">About me</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <p class="copyright">
+                        &copy; 2025 Hanane El Fatihy. All Rights Reserved.
+                    </p>
+                </footer>
 
-        <div class="education-card medium">
-            <div class="year">2022 - 2024</div>
-            <div class="card-content">
-                <h2>École Nationale des Sciences Appliquées de Khouribga</h2>
-                <h3>Cycle Préparatoire</h3>
-                <p>Formation intensive axée sur les mathématiques avancées, l'algorithmique et les concepts fondamentaux de l'informatique et de l'ingénierie.</p>
-            </div>
-        </div>
-
-        <div class="education-card large">
-            <div class="year">2024 - Présent</div>
-            <div class="card-content">
-                <h2>École Nationale des Sciences Appliquées de Khouribga</h2>
-                <h3>Cycle Ingénieur en Informatique et Ingénierie des Données</h3>
-                <p>Programme axé sur l'analyse de données, le développement d'applications, et la résolution de problématiques complexes à l'aide des technologies numériques.</p>
-            </div>
-        </div>
-    </div>
-    </section>
-     <section id="projects">
-        <div class="container">
-            <h2>Projets</h2>
-            <div class="project-card">
-                <h3>Projet de réservation de billets d'avion</h3>
-                <p>Développé un système de réservation de billets d'avion en langage C, permettant aux utilisateurs de réserver et gérer leurs billets.</p>
-                <p><strong>Technologies :</strong> C</p>
-            </div>
-            <div class="project-card">
-                <h3>Projet de traitement d'images</h3>
-                <p>Traitement d'images numériques en Python, incluant les conversions noir et blanc, niveaux de gris et RGB.</p>
-                <p><strong>Technologies :</strong> Python</p>
-            </div>
-            <div class="project-card">
-                <h3>Gestion d'une clinique</h3>
-                <p>Conception et développement d'un site web pour gérer les patients, les rendez-vous et les dossiers médicaux.</p>
-                <p><strong>Technologies :</strong> HTML, CSS, JS, PHP, MySQL</p>
-            </div>
-        </div>
-    </section>
-    <section id="certifications">
-        <div class="container">
-            <h2>Certifications</h2>
-            <div class="experience-card">
-                <h3>Python for Data Science, AI & Development</h3>
-                <p><strong>Fournisseur :</strong> IBM via Coursera</p>
-            </div>
-            <div class="experience-card">
-                <h3>Leadership Skills</h3>
-                <p><strong>Fournisseur :</strong> IBM via Coursera</p>
-            </div>
-            <div class="experience-card">
-                <h3>SQL for Data Science with R</h3>
-                <p><strong>Fournisseur :</strong> IBM via Coursera</p>
-            </div>
-            <div class="experience-card">
-                <h3>Introduction to Databases</h3>
-                <p><strong>Fournisseur :</strong> IBM via Coursera</p>
-            </div>
-            <div class="experience-card">
-                <h3>Database Structures and Management with MySQL</h3>
-                <p><strong>Fournisseur :</strong> IBM via Coursera</p>
-            </div>
-            <div class="experience-card">
-                <h3>Certificat de Membre Actif</h3>
-                <p><strong>Événement :</strong> Open Source Days</p>
-            </div>
-            <div class="experience-card">
-                <h3>Certificat de Membre Actif</h3>
-                <p><strong>Événement :</strong> DATAVERS</p>
-            </div>
-        </div>
-    </section>
-   
-    <section id="skills">
-    <div class="container">
-    <h2>Skills</h2>
-    <div class="languages-box">
-        <p>Langages & Développement</p>
-        <figure><img src="img/pylogo.png" height="75" alt=""><figcaption>PYTHON</figcaption></figure>
-        <figure><img src="img/cLogo.png" height="75" alt=""><figcaption>C</figcaption></figure>
-        <figure><img src="img/sql-logo.png" height="75" alt=""><figcaption>SQL</figcaption></figure>
-    </div>
-    <div class="tools">
-        <p>Outils & Logiciels</p>
-        <figure><img src="img/git.png" height="75" alt=""><figcaption>GIT</figcaption></figure>
-        <figure><img src="img/catia.png" height="75" alt=""><figcaption>CATIA</figcaption></figure>
-        <figure><img src="img/excel.png" height="75" alt=""><figcaption>EXCEL</figcaption></figure>
-    </div>
-    <div class="libraries">
-        <p>Bibliothèques & Technologies</p>
-        <figure><img src="img/numpy-logo.png" height="75" alt=""><figcaption>NUMPY</figcaption></figure>
-        <figure><img src="img/pandas-logo.png" height="75" alt=""><figcaption>PANDAS</figcaption></figure>
-        <figure><img src="img/matplotlib.png" height="75" alt=""><figcaption>MATPLOTLIB</figcaption></figure>
-    </div>
-    <div class="qualities">
-        <p>Qualités professionnelles</p>
-        <ul>
-            <li>Gestion de projet</li>
-            <li>Relations publiques</li>
-            <li>Gestion des relations</li>
-        </ul>
-    </div>
-</div>
-</section>
-<section id="contact">
-    <div class="container">
-        <h2>Contactez-moi</h2>
-        <div class="contact-card">
-            <h3>Restons en contact</h3>
-            <p>Si vous avez des questions  n'hésitez pas à me contacter !</p>
-            <div class="contact-info">
-                <p><strong>Email :</strong> hananelfatihy07@gmail.com</p>
-                <p><strong>Téléphone :</strong> +212 626-649771</p>
-            </div>
-            <div class="social-links">
-                <a target="_blank" href="https://www.instagram.com/han__ne__ell/"><i class='bx bxl-instagram'></i></a>
-                <a target="_blank" href="https://github.com/el-fatihy-hanane"><i class='bx bxl-github'></i></a>
-                <a target="_blank" href="https://www.linkedin.com/in/hanane-el-fatihy-701ab1273"><i class='bx bxl-linkedin'></i></a>
-            </div>
-        </div>
-    </div>
-</section>
+            </section>
+            
+           
