@@ -6,53 +6,125 @@
     <title>Sign Up</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #131313;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #131313 ;
+            min-height: 100vh;
         }
-        form {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px gray;
-            width: 300px;
-        }
-        from .h2{
-            margin-bottom: 3rem;
-            color: #00ffee;
-            text-transform: uppercase;
-            font-size: 40px;
+        
+        #signupForm {
+            background-color: #1a1a1a;
+            padding: 50px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 255, 238, 0.4);
+            width: 100%;
+            max-width: 600px;
             text-align: center;
+            color: #fff;
+            animation: show-content 1.5s ease-out forwards;
+            animation-delay: 1.2s;
         }
-
-        input, select {
+        
+        @keyframes show-content {
+            100% {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+        
+        #signupForm h2 {
+            font-size: 3rem;
+            color: #00ffee;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        
+        input, select, button {
+            background-color: #2a2a2a;
+            border: 2px solid #444;
+            color: #fff;
+            padding: 15px;
+            margin-bottom: 20px;
             width: 100%;
-            padding: 8px;
-            margin: 5px 0;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
         }
-        .error {
-            color: red;
-            font-size: 12px;
+        
+        input:focus, select:focus {
+            border-color: #00ffee;
+            box-shadow: 0 0 10px rgba(0, 255, 238, 0.5);
         }
+        
         button {
-            background-color: blue;
-            color: white;
-            padding: 10px;
-            width: 100%;
+            background-color: #00ffee;
+            color: #131313;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            padding: 15px;
             border: none;
-            border-radius: 5px;
+            border-radius: 12px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 255, 238, 0.3);
+        }
+        
+        button:hover {
+            background-color: #00b3cc;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(106, 225, 217, 0.6);
+        }
+        
+        button:active {
+            background-color: #008c99;
+            transform: translateY(1px);
+        }
+        
+        .error {
+            color: #ff4d4d;
+            font-size: 1.1rem;
+            margin-top: -15px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        select, input[type="date"], input[type="file"] {
+            background-color: #2a2a2a;
+            color: #fff;
+            border: 2px solid #444;
+            padding: 15px;
+            width: 100%;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            outline: none;
+        }
+        
+        input[type="file"]:hover {
+            background-color: #333;
+        }
+        
+        input[type="date"], input[type="file"] {
             cursor: pointer;
         }
-        .h2{
-            margin-bottom: 3rem;
-            color: #00ffee;
-            text-transform: uppercase;
-            font-size: 40px;
-            text-align: center;
+        
+        @media (max-width: 768px) {
+            #signupForm {
+                padding: 30px 20px;
+            }
+        
+            input, select, button {
+                padding: 12px;
+                font-size: 1rem;
+            }
         }
+        
     </style>
 </head>
 <body>
