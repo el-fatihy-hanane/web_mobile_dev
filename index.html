@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #d9e4ea;
+        }
+        #timer {
+            font-size: 3em;
+            margin: 20px;
+            background: black;
+            color: red;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 50%;
+        }
+        #settings {
+            display: none;
+            margin-top: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pomodoro Timer</h1>
+    <div id="timer">25:00</div>
+    <button onclick="startTimer()">Démarrer</button>
+    <button onclick="pauseTimer()">Pause</button>
+    <button onclick="resetTimer()">Réinitialiser</button>
+    <button onclick="openSettings()">⚙️ Paramètres</button>
+    
+    <div id="settings">
+        <label for="workDuration">Temps de travail (minutes) :</label>
+        <input type="number" id="workDuration" value="25" min="1" max="60">
+        <br>
+        <label for="shortBreak">Pause courte (minutes) :</label>
+        <input type="number" id="shortBreak" value="5" min="1" max="30">
+        <br>
+        <label for="longBreak">Pause longue (minutes) :</label>
+        <input type="number" id="longBreak" value="15" min="1" max="60">
+        <br>
+        <button onclick="applySettings()">Appliquer</button>
+    </div>
+    
+    <script>
+        const timerDisplay = document.getElementById("timer");
+        const POMODORO = 1500;
+        const SHORT_BREAK = 300;
+        const LONG_BREAK = 900;
+
+        let durations = {
+            work: POMODORO,
+            shortBreak: SHORT_BREAK,
+            longBreak: LONG_BREAK
+        };
+        let currentDuration = durations.work;
+        let isPaused = true;
+        let timeLeft = currentDuration;
+        let timer;
+
+        function startTimer() {
+            if (!isPaused) return;
+            isPaused = false;
+            timer = setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    updateTimerDisplay();
+                } else {
+                    clearInterval(timer);
+                    alert("Temps écoulé !");
+                }
+            }, 1000);
+        }
+
+        function pauseTimer() {
+            isPaused = true;
+            clearInterval(timer);
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            isPaused = true;
+            timeLeft = currentDuration;
+            updateTimerDisplay();
+        }
+
+        function updateTimerDisplay() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            timerDisplay.innerText = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        function openSettings() {
+            document.getElementById("settings").style.display = "block";
+        }
+        
+        function applySettings() {
+            let newWork = parseInt(document.getElementById("workDuration").value);
+            let newShortBreak = parseInt(document.getElementById("shortBreak").value);
+            let newLongBreak = parseInt(document.getElementById("longBreak").value);
+            
+            if (!isNaN(newWork) && newWork > 0) {
+                durations.work = newWork * 60;
+            }
+            if (!isNaN(newShortBreak) && newShortBreak > 0) {
+                durations.shortBreak = newShortBreak * 60;
+            }
+            if (!isNaN(newLongBreak) && newLongBreak > 0) {
+                durations.longBreak = newLongBreak * 60;
+            }
+            
+            currentDuration = durations.work;
+            timeLeft = currentDuration;
+            updateTimerDisplay();
+            document.getElementById("settings").style.display = "none";
+        }
+    </script>
+</body>
+</html>
