@@ -104,6 +104,60 @@ input:focus, select:focus {
     outline: none;
 }
 
+.photo-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.photo-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--light-bg);
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 3px solid var(--primary-light);
+}
+
+.photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-placeholder {
+    font-size: 48px;
+    color: var(--primary-dark);
+}
+
+.photo-upload-btn {
+    background-color: var(--primary-light);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 8px 15px;
+    color: var(--primary-extra-dark);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.photo-upload-btn:hover {
+    background-color: var(--primary-dark);
+    color: white;
+}
+
+.file-input {
+    display: none;
+}
+
 button {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: white;
@@ -159,7 +213,21 @@ button:active {
             <p>Remplissez le formulaire ci-dessous pour commencer</p>
         </div>
         
-        <form action="cible.php" method="post" class="form-content">
+        <form action="cible.php" method="post" class="form-content" enctype="multipart/form-data">
+            <div class="photo-upload-container">
+                <div class="photo-preview" id="photoPreview">
+                    <div class="photo-placeholder">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                
+                <label for="photo_profil" class="photo-upload-btn">
+                    <i class="fas fa-camera"></i>
+                    Choisir une photo
+                </label>
+                <input type="file" id="photo_profil" name="photo_profil" accept="image/*" class="file-input">
+            </div>
+            
             <div class="form-group">
                 <label for="nom">Nom</label>
                 <i class="fas fa-user"></i>
@@ -214,5 +282,25 @@ button:active {
             En vous inscrivant, vous acceptez nos conditions d'utilisation et notre politique de confidentialité.
         </div>
     </div>
+
+    <script>
+        // Script pour afficher l'aperçu de l'image
+        const photoInput = document.getElementById('photo_profil');
+        const photoPreview = document.getElementById('photoPreview');
+        
+        photoInput.addEventListener('change', function() {
+            const file = this.files[0];
+            
+            if (file) {
+                const reader = new FileReader();
+                
+                reader.addEventListener('load', function() {
+                    photoPreview.innerHTML = `<img src="${this.result}" alt="Photo de profil">`;
+                });
+                
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </body>
 </html>

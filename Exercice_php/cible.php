@@ -108,6 +108,34 @@
             font-weight: 500;
         }
         
+        .profile-photo-container {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-light);
+            box-shadow: 0 4px 8px rgba(160, 120, 180, 0.2);
+        }
+        
+        .no-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: var(--light-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 48px;
+            color: var(--primary-dark);
+            margin: 0 auto;
+            border: 3px solid var(--primary-light);
+        }
+        
         .action-buttons {
             display: flex;
             justify-content: space-between;
@@ -207,7 +235,32 @@
         $telephone = isset($_POST["telephone"]) ? htmlspecialchars($_POST["telephone"]) : "";
         $date_naissance = isset($_POST["date_naissance"]) ? htmlspecialchars($_POST["date_naissance"]) : "";
         $sexe = isset($_POST["sexe"]) ? htmlspecialchars($_POST["sexe"]) : "";
-        $mot_de_passe = isset($_POST["mot_de_passe"]) ? "********" : ""; 
+        $mot_de_passe = isset($_POST["mot_de_passe"]) ? "********" : "";
+        
+        // Traitement de la photo de profil
+        $photo_path = "";
+        $upload_success = false;
+        
+        if(isset($_FILES['photo_profil']) && $_FILES['photo_profil']['error'] == 0) {
+            // Dossier où seront stockées les images
+            $upload_dir = "uploads/";
+            
+            // Créer le dossier s'il n'existe pas
+            if (!file_exists($upload_dir)) {
+                mkdir($upload_dir, 0777, true);
+            }
+            
+            // Générer un nom unique pour l'image
+            $file_extension = pathinfo($_FILES['photo_profil']['name'], PATHINFO_EXTENSION);
+            $new_file_name = uniqid() . '.' . $file_extension;
+            $target_file = $upload_dir . $new_file_name;
+            
+            // Déplacer le fichier téléchargé vers le dossier cible
+            if(move_uploaded_file($_FILES['photo_profil']['tmp_name'], $target_file)) {
+                $photo_path = $target_file;
+                $upload_success = true;
+            }
+        }
     ?>
 
     <div class="container">
@@ -219,6 +272,16 @@
         <div class="form-content">
             <div class="success-message">
                 <p><i class="fas fa-check-circle" style="color: var(--secondary-color); margin-right: 10px;"></i> Votre compte a été créé avec succès. Voici vos informations.</p>
+            </div>
+            
+            <div class="profile-photo-container">
+                <?php if($upload_success): ?>
+                    <img src="<?php echo $photo_path; ?>" alt="Photo de profil" class="profile-photo">
+                <?php else: ?>
+                    <div class="no-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                <?php endif; ?>
             </div>
             
             <div class="form-group">
